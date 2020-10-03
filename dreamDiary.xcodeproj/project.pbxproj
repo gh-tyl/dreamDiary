@@ -15,6 +15,7 @@
 		3CCCB06825283F1C00EA0CE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCB06625283F1C00EA0CE5 /* LaunchScreen.storyboard */; };
 		3CCCB07325283F1C00EA0CE5 /* dreamDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCB07225283F1C00EA0CE5 /* dreamDiaryTests.swift */; };
 		3CCCB07E25283F1C00EA0CE5 /* dreamDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCB07D25283F1C00EA0CE5 /* dreamDiaryUITests.swift */; };
+		3CF929492528BB6B00B99A0F /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF929482528BB6B00B99A0F /* LogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3CCCB07925283F1C00EA0CE5 /* dreamDiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dreamDiaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CCCB07D25283F1C00EA0CE5 /* dreamDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dreamDiaryUITests.swift; sourceTree = "<group>"; };
 		3CCCB07F25283F1C00EA0CE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CF929482528BB6B00B99A0F /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				3CCCB05B25283F1A00EA0CE5 /* AppDelegate.swift */,
 				3CCCB05D25283F1A00EA0CE5 /* SceneDelegate.swift */,
 				3CCCB05F25283F1A00EA0CE5 /* ViewController.swift */,
+				3CF929482528BB6B00B99A0F /* LogViewController.swift */,
 				3CCCB06125283F1A00EA0CE5 /* Main.storyboard */,
 				3CCCB06425283F1C00EA0CE5 /* Assets.xcassets */,
 				3CCCB06625283F1C00EA0CE5 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 				3CCCB06025283F1A00EA0CE5 /* ViewController.swift in Sources */,
 				3CCCB05C25283F1A00EA0CE5 /* AppDelegate.swift in Sources */,
 				3CCCB05E25283F1A00EA0CE5 /* SceneDelegate.swift in Sources */,
+				3CF929492528BB6B00B99A0F /* LogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
