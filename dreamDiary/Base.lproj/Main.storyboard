@@ -29,25 +29,11 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="389"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.001722710082" blue="0.40021555180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="B82-eV-sUb" id="vvM-1i-CXj"/>
+                                    <outlet property="delegate" destination="B82-eV-sUb" id="Cc0-Ox-kgk"/>
+                                </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EEP-zE-mvC">
-                                <rect key="frame" x="0.0" y="441" width="375" height="177"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="daiaryCell" id="I5C-6e-tU2">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I5C-6e-tU2" id="jBF-2e-yEd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="wgB-0g-SMr" kind="show" identifier="toDetail" id="3JF-8j-0eL"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZcY-HK-VyU"/>
                         <color key="backgroundColor" red="0.0" green="0.001722710082" blue="0.40021555180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -59,6 +45,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="calendar" destination="4BL-z6-qi8" id="Kxx-4e-kiu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0S-OX-lCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

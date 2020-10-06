@@ -6,6 +6,7 @@ target 'dreamDiary' do
   use_frameworks!
   pod 'RealmSwift'
   pod 'FSCalendar'
+  pod 'CalculateCalendarLogic'
 
   # Pods for dreamDiary
 
