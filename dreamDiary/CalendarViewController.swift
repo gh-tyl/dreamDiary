@@ -93,10 +93,6 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         let month = tmpDate.component(.month, from: date)
         let day = tmpDate.component(.day, from: date)
         labelDate.text = "\(year)/\(month)/\(day)"
-        
-        // pass date
-        date = dateFormatter.string(from: calendar.date(for: nil))
-        
     }
     
     
