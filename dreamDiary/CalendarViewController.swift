@@ -11,7 +11,11 @@ import CalculateCalendarLogic
 
 class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     @IBOutlet weak var calendar: FSCalendar!
-
+    // date4diary
+    var date: String!
+    // displayDate4test
+    @IBOutlet weak var labelDate: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // デリゲートの設定
@@ -80,5 +84,20 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
 //    func calendar(calendar: FSCalendar!, hasEventForDate date: NSDate!) -> Bool {
 //        return shouldShowEventDot
 //    }
+    
+    // データの受け渡し
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        // display on label
+        let tmpDate = Calendar(identifier: .gregorian)
+        let year = tmpDate.component(.year, from: date)
+        let month = tmpDate.component(.month, from: date)
+        let day = tmpDate.component(.day, from: date)
+        labelDate.text = "\(year)/\(month)/\(day)"
+        
+        // pass date
+        date = dateFormatter.string(from: calendar.date(for: nil))
+        
+    }
+    
     
 }

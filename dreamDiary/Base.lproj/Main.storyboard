@@ -42,6 +42,13 @@
                                     <outlet property="delegate" destination="B82-eV-sUb" id="Cc0-Ox-kgk"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRe-lQ-MZT">
+                                <rect key="frame" x="16" y="438" width="343" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="JetBrainsMono-Variable" family="JetBrains Mono" pointSize="30"/>
+                                <color key="textColor" red="0.88198309080000004" green="0.83704785849999996" blue="0.35231184570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZcY-HK-VyU"/>
                         <color key="backgroundColor" red="0.0" green="0.001722710082" blue="0.40021555180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -55,11 +62,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="calendar" destination="4BL-z6-qi8" id="Kxx-4e-kiu"/>
+                        <outlet property="labelDate" destination="uRe-lQ-MZT" id="MFA-eL-e9i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0S-OX-lCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2500" y="107"/>
+            <point key="canvasLocation" x="2500" y="106.59670164917542"/>
         </scene>
         <!--Alarm-->
         <scene sceneID="Hew-0m-EeC">
@@ -100,6 +108,9 @@
                                 <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="titleText:" destination="0wN-MX-qvG" eventType="editingDidEnd" id="b7I-oR-7sc"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Nr-Jl-Lor"/>
@@ -110,6 +121,7 @@
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="US9-8Y-TRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="0wN-MX-qvG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3327" y="107"/>
         </scene>

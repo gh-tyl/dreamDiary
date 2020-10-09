@@ -6,24 +6,27 @@
 //
 
 import UIKit
+import Realm
 
 class InputDiaryViewController: UIViewController {
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var dreamTextView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // Textの設定
+        // titleTextField.delegate = self
+        // dreamTextView.delegate = self
+                
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
-    */
+    
+    @IBAction func saveButtonPushed(_ sender: UIButton) {
+        
+    }
 
 }
