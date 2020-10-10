@@ -8,6 +8,7 @@
 import UIKit
 import FSCalendar
 import CalculateCalendarLogic
+import RealmSwift
 
 class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     @IBOutlet weak var calendar: FSCalendar!
@@ -15,6 +16,9 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     var date: String!
     // displayDate4test
     @IBOutlet weak var labelDate: UILabel!
+    // declare realm
+    let realm = try! Realm()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

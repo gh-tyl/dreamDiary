@@ -1,19 +1,11 @@
-//
-//  DreamModel.swift
-//  dreamDiary
-//
-//  Created by Tyler Inari on 2020/10/06.
-//
-
 import UIKit
 import FSCalendar
 import RealmSwift
 
-class DreamModel: Object {
+class DreamsModel: Object {
     @objc dynamic var title = ""
     @objc dynamic var body = ""
     @objc dynamic var date = ""
-    
 }
 
 //// イベント作成
