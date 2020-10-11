@@ -1,10 +1,3 @@
-//
-//  CalendarViewController.swift
-//  dreamDiary
-//
-//  Created by Tyler Inari on 2020/10/05.
-//
-
 import UIKit
 import FSCalendar
 import CalculateCalendarLogic
@@ -21,7 +14,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     let realm = try! Realm()
     // TableView
     @IBOutlet weak var dreamTableView: UITableView!
-    var dreamDaily: Results<DreamsModel>!
+    var dreamList: Results<DreamsModel>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +26,13 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         
         // サンプルデータ
         for i in 1...3 {
-                let newList = DreamsModel()
-                newList.title = "テスト" + String(i)
-                newList.body = "テスト" + String(i)
+                let sampleList = DreamsModel()
+                sampleList.title = "テスト" + String(i)
+                sampleList.body = "テスト" + String(i)
                 do {
                     let realm = try Realm()
                     try realm.write({ () -> Void in
-                        realm.add(newList)
+                        realm.add(sampleList)
                     })
                 } catch {
                 }
@@ -48,10 +41,9 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         // Realmからデータ取得
         do {
             let realm = try Realm()
-            dreamDaily = realm.objects(DreamsModel.self)
+            dreamList = realm.objects(DreamsModel.self)
         } catch {
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -111,27 +103,55 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         return nil
     }
     
-    // データの受け渡し
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        // display on label
-        let tmpDate = Calendar(identifier: .gregorian)
-        let year = tmpDate.component(.year, from: date)
-        let month = tmpDate.component(.month, from: date)
-        let day = tmpDate.component(.day, from: date)
-        labelDate.text = "\(year)/\(month)/\(day)"
-    }
-    
     // Table設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return dreamDaily.count
+            return dreamList.count
         }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "dreamCell", for: indexPath)
-        cell.textLabel!.text = dreamDaily[indexPath.row].title
+        cell.textLabel!.text = dreamList[indexPath.row].title
 
         return cell
+    }
+    
+    // 記述した日付にマーク
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int{
+        var tableList: Results<DreamsModel>!
+        // 対象の日付が設定されているデータを取得
+        do {
+           let realm = try Realm()
+           let predicate = NSPredicate(format: "%@ =< date AND date < %@", getBeginingAndEndOfDay(date).begining as CVarArg, getBeginingAndEndOfDay(date).end as CVarArg)
+            tableList = realm.objects(DreamsModel.self).filter(predicate)
+        } catch {
+        }
+        return tableList.count
+    }
+
+    // 日の始まりと終わりを取得
+    private func getBeginingAndEndOfDay(_ date:Date) -> (begining: Date , end: Date) {
+        let begining = Calendar(identifier: .gregorian).startOfDay(for: date)
+        let end = begining + 24*60*60
+        return (begining, end)
+    }
+
+    
+    @IBAction func plusButton(_ sender: Any) {
+        // データの受け渡し
+        func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> (Int, Int, Int) {
+            // display on label
+            let tmpDate = Calendar(identifier: .gregorian)
+            let year4diary = tmpDate.component(.year, from: date)
+            let month4diary = tmpDate.component(.month, from: date)
+            let day4diary = tmpDate.component(.day, from: date)
+            labelDate.text = "\(year4diary)/\(month4diary)/\(day4diary)"
+            return (year4diary,month4diary,day4diary)
+        }
+        
+        let dateValue = self.storyboard?.instantiateViewController(withIdentifier:  "inputDream") as! InputDiaryViewController
+        print("dateValue", dateValue)
+        self.navigationController?.pushViewController(dateValue, animated: true)
     }
     
 }

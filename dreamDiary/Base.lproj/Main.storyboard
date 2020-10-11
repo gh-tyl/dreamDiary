@@ -16,7 +16,7 @@
         <!--Calendar View Controller-->
         <scene sceneID="maj-lF-aHR">
             <objects>
-                <viewController id="B82-eV-sUb" customClass="CalendarViewController" customModule="dreamDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarView" id="B82-eV-sUb" customClass="CalendarViewController" customModule="dreamDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3HK-FJ-NbT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q5s-3X-Xp6">
-                                <rect key="frame" x="16" y="484" width="343" height="134"/>
+                                <rect key="frame" x="16" y="484" width="343" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -71,6 +71,7 @@
                     <navigationItem key="navigationItem" id="iFR-zE-vP4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nev-2u-ZE1">
                             <connections>
+                                <action selector="plusButton:" destination="B82-eV-sUb" id="vLd-rU-a0a"/>
                                 <segue destination="hNn-o6-hxl" kind="show" identifier="saveDream" id="r1g-Xr-2tX"/>
                             </connections>
                         </barButtonItem>
@@ -105,7 +106,7 @@
         <!--Input Diary View Controller-->
         <scene sceneID="UHU-QO-E8c">
             <objects>
-                <viewController id="hNn-o6-hxl" customClass="InputDiaryViewController" customModule="dreamDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inputDream" id="hNn-o6-hxl" customClass="InputDiaryViewController" customModule="dreamDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XSF-cN-Baw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
