@@ -1,35 +1,42 @@
-//
-//  InputDiaryViewController.swift
-//  dreamDiary
-//
-//  Created by Tyler Inari on 2020/10/05.
-//
-
 import UIKit
 import RealmSwift
 
 class InputDiaryViewController: UIViewController {
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var dreamTextView: UITextView!
-    let realm = try! Realm()
-    let dailyDream = DreamsModel()
-    
+    @IBOutlet var titleTextField: UITextField!
+    @IBOutlet var dreamTextView: UITextView!
+    var dreamList: Results<DreamsModel>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Realmのインスタンスを取得
+        let realm = try! Realm()
+        self.dreamList = realm.objects(DreamsModel.self)
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func saveButtonPushed(_ sender: UIButton) {
-        try! realm.write {
-            realm.add(dailyDream)
+    @IBAction func saveDream(_ sender: Any) {
+        _ = try! Realm()
+        // モデルのクラスをインスタンス化
+        let dailyDream = DreamsModel()
+        // コンテンツを保存
+        dailyDream.title = self.titleTextField.text!
+        dailyDream.body = self.dreamTextView.text
+        
+        // Realmのdbを取得
+        let realm_after = try! Realm()
+
+        try! realm_after.write {
+            realm_after.add(dailyDream)
+            print("success")
+            print(dailyDream)
         }
+        
+        // 画面遷移
+        self.navigationController?.popViewController(animated: true)
+        
     }
 
 }

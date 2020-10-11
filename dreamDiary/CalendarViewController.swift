@@ -10,7 +10,8 @@ import FSCalendar
 import CalculateCalendarLogic
 import RealmSwift
 
-class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+class CalendarViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+    
     @IBOutlet weak var calendar: FSCalendar!
     // date4diary
     var date: String!
@@ -18,13 +19,39 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     @IBOutlet weak var labelDate: UILabel!
     // declare realm
     let realm = try! Realm()
-    
+    // TableView
+    @IBOutlet weak var dreamTableView: UITableView!
+    var dreamDaily: Results<DreamsModel>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // デリゲートの設定
         self.calendar.dataSource = self
         self.calendar.delegate = self
+        self.dreamTableView.dataSource = self
+        self.dreamTableView.delegate = self
+        
+        // サンプルデータ
+        for i in 1...3 {
+                let newList = DreamsModel()
+                newList.title = "テスト" + String(i)
+                newList.body = "テスト" + String(i)
+                do {
+                    let realm = try Realm()
+                    try realm.write({ () -> Void in
+                        realm.add(newList)
+                    })
+                } catch {
+                }
+            }
+        
+        // Realmからデータ取得
+        do {
+            let realm = try Realm()
+            dreamDaily = realm.objects(DreamsModel.self)
+        } catch {
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,11 +111,6 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         return nil
     }
     
-//    //点マークをつける関数
-//    func calendar(calendar: FSCalendar!, hasEventForDate date: NSDate!) -> Bool {
-//        return shouldShowEventDot
-//    }
-    
     // データの受け渡し
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         // display on label
@@ -99,5 +121,17 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         labelDate.text = "\(year)/\(month)/\(day)"
     }
     
+    // Table設定
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return dreamDaily.count
+        }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // セルを取得する
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "dreamCell", for: indexPath)
+        cell.textLabel!.text = dreamDaily[indexPath.row].title
+
+        return cell
+    }
     
 }

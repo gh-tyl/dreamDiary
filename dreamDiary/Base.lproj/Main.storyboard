@@ -49,6 +49,21 @@
                                 <color key="textColor" red="0.88198309080000004" green="0.83704785849999996" blue="0.35231184570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q5s-3X-Xp6">
+                                <rect key="frame" x="16" y="484" width="343" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="calendarsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dreamCell" id="VKu-YV-fuR">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VKu-YV-fuR" id="xkH-pr-cwo">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZcY-HK-VyU"/>
                         <color key="backgroundColor" red="0.0" green="0.001722710082" blue="0.40021555180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -56,12 +71,13 @@
                     <navigationItem key="navigationItem" id="iFR-zE-vP4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nev-2u-ZE1">
                             <connections>
-                                <segue destination="hNn-o6-hxl" kind="show" id="r1g-Xr-2tX"/>
+                                <segue destination="hNn-o6-hxl" kind="show" identifier="saveDream" id="r1g-Xr-2tX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="calendar" destination="4BL-z6-qi8" id="Kxx-4e-kiu"/>
+                        <outlet property="dreamTableView" destination="q5s-3X-Xp6" id="TVw-hv-hQY"/>
                         <outlet property="labelDate" destination="uRe-lQ-MZT" id="MFA-eL-e9i"/>
                     </connections>
                 </viewController>
@@ -117,8 +133,16 @@
                         <color key="backgroundColor" red="0.0" green="0.001722710082" blue="0.40021555180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="fCW-wm-8zT">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="KPV-NF-QFo"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="KPV-NF-QFo">
+                            <connections>
+                                <action selector="saveDream:" destination="hNn-o6-hxl" id="CS0-Aa-F1d"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dreamTextView" destination="cvq-2c-KLu" id="ZkO-Zs-Xbu"/>
+                        <outlet property="titleTextField" destination="O6p-V9-HR7" id="bZ8-uT-F1O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="US9-8Y-TRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="0wN-MX-qvG" userLabel="Exit" sceneMemberID="exit"/>
