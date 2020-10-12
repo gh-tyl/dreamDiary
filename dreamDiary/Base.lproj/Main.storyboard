@@ -71,7 +71,6 @@
                     <navigationItem key="navigationItem" id="iFR-zE-vP4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nev-2u-ZE1">
                             <connections>
-                                <action selector="plusButton:" destination="B82-eV-sUb" id="vLd-rU-a0a"/>
                                 <segue destination="hNn-o6-hxl" kind="show" identifier="saveDream" id="r1g-Xr-2tX"/>
                             </connections>
                         </barButtonItem>
@@ -112,7 +111,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cvq-2c-KLu">
-                                <rect key="frame" x="16" y="122" width="343" height="480"/>
+                                <rect key="frame" x="16" y="232" width="343" height="370"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -129,6 +128,17 @@
                                     <action selector="titleText:" destination="0wN-MX-qvG" eventType="editingDidEnd" id="b7I-oR-7sc"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ic-ZN-94h">
+                                <rect key="frame" x="262" y="44" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="E3a-BR-MwS">
+                                <rect key="frame" x="16" y="127" width="343" height="97"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Nr-Jl-Lor"/>
                         <color key="backgroundColor" red="0.0" green="0.001722710082" blue="0.40021555180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -141,6 +151,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="datePicker" destination="E3a-BR-MwS" id="cJI-L7-OAB"/>
                         <outlet property="dreamTextView" destination="cvq-2c-KLu" id="ZkO-Zs-Xbu"/>
                         <outlet property="titleTextField" destination="O6p-V9-HR7" id="bZ8-uT-F1O"/>
                     </connections>
@@ -148,7 +159,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="US9-8Y-TRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="0wN-MX-qvG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3327" y="107"/>
+            <point key="canvasLocation" x="3325.5999999999999" y="106.59670164917542"/>
         </scene>
         <!--Alarm View Controller-->
         <scene sceneID="oRd-ix-uCV">
@@ -304,6 +315,9 @@
         <image name="plus.rectangle.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

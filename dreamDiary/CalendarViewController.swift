@@ -7,7 +7,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var calendar: FSCalendar!
     // date4diary
-    var date: String!
+    var dateValue: Date!
     // displayDate4test
     @IBOutlet weak var labelDate: UILabel!
     // declare realm
@@ -15,6 +15,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     // TableView
     @IBOutlet weak var dreamTableView: UITableView!
     var dreamList: Results<DreamsModel>!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,19 +25,17 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         self.dreamTableView.dataSource = self
         self.dreamTableView.delegate = self
         
-        // サンプルデータ
-        for i in 1...3 {
-                let sampleList = DreamsModel()
-                sampleList.title = "テスト" + String(i)
-                sampleList.body = "テスト" + String(i)
-                do {
-                    let realm = try Realm()
-                    try realm.write({ () -> Void in
-                        realm.add(sampleList)
-                    })
-                } catch {
-                }
-            }
+//        // サンプルデータ
+//        let dreamArray = DreamsModel()
+//        dreamArray.title = "テスト" + String(0)
+//        dreamArray.body = "テスト" + String(0)
+//        do {
+//            let realm = try Realm()
+//            try realm.write({ () -> Void in
+//                realm.add(dreamArray)
+//            })
+//            } catch {
+//            }
         
         // Realmからデータ取得
         do {
@@ -44,6 +43,8 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
             dreamList = realm.objects(DreamsModel.self)
         } catch {
         }
+        
+        dreamTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -103,6 +104,17 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         return nil
     }
     
+    // データの受け渡し
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        // display on label
+        let tmpDate = Calendar(identifier: .gregorian)
+        let year4diary = tmpDate.component(.year, from: date)
+        let month4diary = tmpDate.component(.month, from: date)
+        let day4diary = tmpDate.component(.day, from: date)
+        labelDate.text = "\(year4diary)/\(month4diary)/\(day4diary)"
+        
+    }
+    
     // Table設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return dreamList.count
@@ -134,24 +146,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         let begining = Calendar(identifier: .gregorian).startOfDay(for: date)
         let end = begining + 24*60*60
         return (begining, end)
-    }
-
-    
-    @IBAction func plusButton(_ sender: Any) {
-        // データの受け渡し
-        func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> (Int, Int, Int) {
-            // display on label
-            let tmpDate = Calendar(identifier: .gregorian)
-            let year4diary = tmpDate.component(.year, from: date)
-            let month4diary = tmpDate.component(.month, from: date)
-            let day4diary = tmpDate.component(.day, from: date)
-            labelDate.text = "\(year4diary)/\(month4diary)/\(day4diary)"
-            return (year4diary,month4diary,day4diary)
-        }
-        
-        let dateValue = self.storyboard?.instantiateViewController(withIdentifier:  "inputDream") as! InputDiaryViewController
-        print("dateValue", dateValue)
-        self.navigationController?.pushViewController(dateValue, animated: true)
     }
     
 }

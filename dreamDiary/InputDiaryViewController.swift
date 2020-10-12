@@ -4,6 +4,7 @@ import RealmSwift
 class InputDiaryViewController: UIViewController {
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var dreamTextView: UITextView!
+    @IBOutlet var datePicker: UIDatePicker!
     var dreamList: Results<DreamsModel>!
 
     override func viewDidLoad() {
@@ -22,6 +23,7 @@ class InputDiaryViewController: UIViewController {
         // モデルのクラスをインスタンス化
         let dailyDream = DreamsModel()
         // コンテンツを保存
+        dailyDream.date = self.datePicker.date
         dailyDream.title = self.titleTextField.text!
         dailyDream.body = self.dreamTextView.text
         
