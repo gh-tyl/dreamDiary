@@ -25,25 +25,13 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         self.dreamTableView.dataSource = self
         self.dreamTableView.delegate = self
         
-//        // サンプルデータ
-//        let dreamArray = DreamsModel()
-//        dreamArray.title = "テスト" + String(0)
-//        dreamArray.body = "テスト" + String(0)
-//        do {
-//            let realm = try Realm()
-//            try realm.write({ () -> Void in
-//                realm.add(dreamArray)
-//            })
-//            } catch {
-//            }
-        
         // Realmからデータ取得
         do {
             let realm = try Realm()
-            dreamList = realm.objects(DreamsModel.self)
+            dreamList = realm.objects(DreamsModel.self)//.filter()
         } catch {
         }
-        
+        print(dreamList)
         dreamTableView.reloadData()
     }
     

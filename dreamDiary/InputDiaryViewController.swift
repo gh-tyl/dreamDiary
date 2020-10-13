@@ -29,7 +29,7 @@ class InputDiaryViewController: UIViewController {
         
         // Realmのdbを取得
         let realm_after = try! Realm()
-
+        // 書き込み
         try! realm_after.write {
             realm_after.add(dailyDream)
             print("success")
