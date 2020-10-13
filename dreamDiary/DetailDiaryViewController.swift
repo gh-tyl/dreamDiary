@@ -2,8 +2,8 @@ import UIKit
 import RealmSwift
 
 class DetailDiaryViewController: UIViewController {
-    @IBOutlet var titleView: UITextView!
-    @IBOutlet var bodyView: UITextView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var bodyLabel: UILabel!
     // declare realm
     let realm = try! Realm()
     var dreamList: Results<DreamsModel>!
@@ -17,10 +17,8 @@ class DetailDiaryViewController: UIViewController {
             dreamList = realm.objects(DreamsModel.self)//.filter()
         } catch {
         }
-        titleView.reloadInputViews()
-        bodyView.reloadInputViews()
+        titleLabel.reloadInputViews()
+        bodyLabel.reloadInputViews()
     }
     
-    
-
 }

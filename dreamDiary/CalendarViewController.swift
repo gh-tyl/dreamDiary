@@ -31,12 +31,16 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
             dreamList = realm.objects(DreamsModel.self)//.filter()
         } catch {
         }
-        print(dreamList)
         dreamTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        dreamTableView.reloadData()
     }
     
     fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)
