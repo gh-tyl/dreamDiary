@@ -25,8 +25,7 @@ class InputDiaryViewController: UIViewController {
             let dreamsModel = DreamsModel()
             dreamsModel.title = titleTextField.text ?? ""
             dreamsModel.body = bodyTextView.text
-
-//            dreamsModel.date = dateString
+            dreamsModel.date = dateString
             
             try! realm.write {
                 realm.add(dreamsModel)
