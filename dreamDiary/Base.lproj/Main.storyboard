@@ -154,8 +154,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bodyTextView" destination="cvq-2c-KLu" id="1pv-oO-gWt"/>
                         <outlet property="datePicker" destination="E3a-BR-MwS" id="cJI-L7-OAB"/>
-                        <outlet property="dreamTextView" destination="cvq-2c-KLu" id="ZkO-Zs-Xbu"/>
                         <outlet property="titleTextField" destination="O6p-V9-HR7" id="bZ8-uT-F1O"/>
                     </connections>
                 </viewController>

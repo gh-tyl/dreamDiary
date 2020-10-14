@@ -18,22 +18,22 @@ class InputDiaryViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func createDream(succes: @escaping () -> Void ) {
-        let dateFormatter = DateFormatter()
-        do {
-            let realm = try! Realm()
-            let dreamsModel = DreamsModel()
-            dreamsModel.title = titleTextField.text ?? ""
-            dreamsModel.body = bodyTextView.text
-            dreamsModel.date = dateString
-            
-            try! realm.write {
-                realm.add(dreamsModel)
-                succes()
-            }
-        } catch {
-        }
-    }
+//    func createDream(succes: @escaping () -> Void ) {
+//        do {
+//            let realm = try! Realm()
+//            let dreamsModel = DreamsModel()
+//            dreamsModel.title = titleTextField.text ?? ""
+//            dreamsModel.body = bodyTextView.text
+//
+//            //dreamsModel.date = DateUtils.stringFromDate(date: <#T##Date#>, format: <#T##String#>)
+//            
+//            try! realm.write {
+//                realm.add(dreamsModel)
+//                succes()
+//            }
+//        } catch {
+//        }
+//    }
     
     @IBAction func saveDream(_ sender: Any) {
         _ = try! Realm()

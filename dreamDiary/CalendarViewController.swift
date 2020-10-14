@@ -7,15 +7,18 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var calendar: FSCalendar!
     // date4diary
-    var dateValue: Date!
+    var dateValue: String!
+    dynamic var presentDate = Date()
     // displayDate4test
     @IBOutlet weak var labelDate: UILabel!
     // declare realm
     let realm = try! Realm()
     // TableView
     @IBOutlet weak var dreamTableView: UITableView!
+    // Realm
     var dreamList: Results<DreamsModel>!
-        
+    var selectedDreamList: Results<DreamsModel>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // デリゲートの設定
@@ -30,7 +33,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
             dreamList = realm.objects(DreamsModel.self)
         } catch {
         }
-        dreamTableView.reloadData()
+        selectedDreamList = dreamList.filter("%@ =< date AND date < %@", getBeginingAndEndOfDay(presentDate).begining as CVarArg, getBeginingAndEndOfDay(presentDate).end as CVarArg)
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,18 +42,8 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // 再読み込み
         dreamTableView.reloadData()
-    }
-    
-    // 日付毎のイベント表示
-    func getModel() {
-        let results = realm.objects(DreamsModel.self)
-        var dreamsModels: [[String:String]] = []
-        for result in results {
-            dreamsModels.append(["title": result.title,
-                                 "body": result.body,
-                                 "date": result.date])
-        }
     }
     
     fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)
@@ -59,7 +52,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
-
+    
     // 祝日判定を行い結果を返すメソッド(True:祝日)
     func judgeHoliday(_ date : Date) -> Bool {
         // 祝日判定用のカレンダークラスのインスタンス
@@ -70,7 +63,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         let day = tmpCalendar.component(.day, from: date)
         // CalculateCalendarLogic()：祝日判定のインスタンスの生成
         let holiday = CalculateCalendarLogic()
-
         return holiday.judgeJapaneseHoliday(year: year, month: month, day: day)
     }
     
@@ -82,13 +74,13 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         let day = tmpCalendar.component(.day, from: date)
         return (year,month,day)
     }
-
+    
     //曜日判定(日曜日:1 〜 土曜日:7)
     func getWeekIdx(_ date: Date) -> Int{
         let tmpCalendar = Calendar(identifier: .gregorian)
         return tmpCalendar.component(.weekday, from: date)
     }
-
+    
     // 土日や祝日の日の文字色を変える
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
         //祝日判定をする（祝日は赤色で表示する）
@@ -106,27 +98,29 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         return nil
     }
     
-    // データの受け渡し
-//    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-//        // display on label
-//        let tmpDate = Calendar(identifier: .gregorian)
-//        let year4diary = tmpDate.component(.year, from: date)
-//        let month4diary = tmpDate.component(.month, from: date)
-//        let day4diary = tmpDate.component(.day, from: date)
-//        labelDate.text = "\(year4diary)/\(month4diary)/\(day4diary)"
-//
-//    }
+    // 日付毎のイベント表示
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        // display on label
+        let tmpDate = Calendar(identifier: .gregorian)
+        let year4diary = tmpDate.component(.year, from: date)
+        let month4diary = tmpDate.component(.month, from: date)
+        let day4diary = tmpDate.component(.day, from: date)
+        dateValue = "\(year4diary)/\(month4diary)/\(day4diary)"
+        // datevalueの中でrealmの中身のフィルタリング
+        selectedDreamList = dreamList.filter("%@ =< date AND date < %@", getBeginingAndEndOfDay(date).begining as CVarArg, getBeginingAndEndOfDay(date).end as CVarArg)
+        dreamTableView.reloadData()
+    }
     
     // Table設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return dreamList.count
-        }
-
+        return selectedDreamList.count
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // セルを取得する
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "dreamCell", for: indexPath)
-        cell.textLabel!.text = dreamList[indexPath.row].title
+        cell.textLabel!.text = selectedDreamList[indexPath.row].title
         return cell
     }
     
@@ -135,19 +129,18 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         var tableList: Results<DreamsModel>!
         // 対象の日付が設定されているデータを取得
         do {
-           let realm = try Realm()
-           let predicate = NSPredicate(format: "%@ =< date AND date < %@", getBeginingAndEndOfDay(date).begining as CVarArg, getBeginingAndEndOfDay(date).end as CVarArg)
+            let realm = try Realm()
+            let predicate = NSPredicate(format: "%@ =< date AND date < %@", getBeginingAndEndOfDay(date).begining as CVarArg, getBeginingAndEndOfDay(date).end as CVarArg)
             tableList = realm.objects(DreamsModel.self).filter(predicate)
         } catch {
         }
         return tableList.count
     }
-
+    
     // 日の始まりと終わりを取得
     private func getBeginingAndEndOfDay(_ date:Date) -> (begining: Date , end: Date) {
         let begining = Calendar(identifier: .gregorian).startOfDay(for: date)
         let end = begining + 24*60*60
         return (begining, end)
     }
-    
 }
