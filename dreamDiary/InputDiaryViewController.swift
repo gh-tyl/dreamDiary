@@ -6,7 +6,7 @@ class InputDiaryViewController: UIViewController {
     @IBOutlet var bodyTextView: UITextView!
     @IBOutlet var datePicker: UIDatePicker!
     var dreamList: Results<DreamsModel>!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Realmのインスタンスを取得
@@ -18,44 +18,21 @@ class InputDiaryViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-//    func createDream(succes: @escaping () -> Void ) {
-//        do {
-//            let realm = try! Realm()
-//            let dreamsModel = DreamsModel()
-//            dreamsModel.title = titleTextField.text ?? ""
-//            dreamsModel.body = bodyTextView.text
-//
-//            //dreamsModel.date = DateUtils.stringFromDate(date: <#T##Date#>, format: <#T##String#>)
-//            
-//            try! realm.write {
-//                realm.add(dreamsModel)
-//                succes()
-//            }
-//        } catch {
-//        }
-//    }
-    
     @IBAction func saveDream(_ sender: Any) {
         _ = try! Realm()
         // モデルのクラスをインスタンス化
         let dailyDream = DreamsModel()
         // コンテンツを保存
-        //dailyDream.date = self.datePicker.date
+        dailyDream.date = self.datePicker.date
         dailyDream.title = self.titleTextField.text!
         dailyDream.body = self.bodyTextView.text
-        
         // Realmのdbを取得
         let realm_after = try! Realm()
         // 書き込み
         try! realm_after.write {
             realm_after.add(dailyDream)
-            print("success")
-            print(dailyDream)
         }
-        
         // 画面遷移
         self.navigationController?.popViewController(animated: true)
-        
     }
-
 }

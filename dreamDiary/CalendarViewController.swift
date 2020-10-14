@@ -143,4 +143,8 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         let end = begining + 24*60*60
         return (begining, end)
     }
+    
+    @IBAction func passId() {
+        print("id")
+    }
 }

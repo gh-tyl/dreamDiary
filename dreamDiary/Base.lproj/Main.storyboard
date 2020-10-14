@@ -61,9 +61,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="4xG-Fe-8EM" kind="show" id="9oF-52-FIT"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -257,7 +254,9 @@
                         <viewLayoutGuide key="safeArea" id="tqg-p6-Xja"/>
                         <color key="backgroundColor" red="0.0" green="0.001722710082" blue="0.40021555180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oIj-u2-fvA"/>
+                    <navigationItem key="navigationItem" id="oIj-u2-fvA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="PsG-5l-cSV"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="bodyLabel" destination="EtT-Vf-Kgb" id="B2v-Ur-khu"/>
                         <outlet property="titleLabel" destination="d9U-4V-Y7Q" id="gUJ-7x-rOz"/>
