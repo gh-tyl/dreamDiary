@@ -1,7 +1,7 @@
 import UIKit
+import RealmSwift
 import FSCalendar
 import CalculateCalendarLogic
-import RealmSwift
 
 class CalendarViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     
@@ -27,10 +27,10 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         // Realmからデータ取得
         do {
             let realm = try Realm()
-            dreamList = realm.objects(DreamsModel.self)//.filter()
+            dreamList = realm.objects(DreamsModel.self)
         } catch {
         }
-        // dreamTableView.reloadData()
+        dreamTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,6 +40,17 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dreamTableView.reloadData()
+    }
+    
+    // 日付毎のイベント表示
+    func getModel() {
+        let results = realm.objects(DreamsModel.self)
+        var dreamsModels: [[String:String]] = []
+        for result in results {
+            dreamsModels.append(["title": result.title,
+                                 "body": result.body,
+                                 "date": result.date])
+        }
     }
     
     fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)
@@ -112,16 +123,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Calendar {
-            // display on label
-            let tmpDate = Calendar(identifier: .gregorian)
-//            let year4diary = tmpDate.component(.year, from: date)
-//            let month4diary = tmpDate.component(.month, from: date)
-//            let day4diary = tmpDate.component(.day, from: date)
-//            labelDate.text = "\(year4diary)/\(month4diary)/\(day4diary)"
-            return tmpDate
-        }
         
         // セルを取得する
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "dreamCell", for: indexPath)

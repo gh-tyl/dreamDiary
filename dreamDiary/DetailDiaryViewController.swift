@@ -6,7 +6,7 @@ class DetailDiaryViewController: UIViewController {
     @IBOutlet var bodyLabel: UILabel!
     // declare realm
     let realm = try! Realm()
-    var dreamList: Results<DreamsModel>!
+    var dreamList: Results<DreamsModel>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +16,7 @@ class DetailDiaryViewController: UIViewController {
             let realm = try Realm()
             dreamList = realm.objects(DreamsModel.self)//.filter()
         } catch {
-        }
+        }
         titleLabel.reloadInputViews()
         bodyLabel.reloadInputViews()
     }

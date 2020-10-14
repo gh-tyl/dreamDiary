@@ -1,29 +1,43 @@
+//import UIKit
 //
-//  AlarmViewController.swift
-//  dreamDiary
-//
-//  Created by Tyler Inari on 2020/10/05.
-//
-
-import UIKit
-
-class AlarmViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+//class AlarmViewController: UIViewController {
+//    let alarm = Alarm()
+//    
+//    @IBOutlet var sleepTimePicker: UIDatePicker!
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        //UIDatePickerを.timeモードにする
+//        sleepTimePicker.datePickerMode = UIDatePicker.Mode.time
+//        //現在の時間をDatePickerに表示
+//        sleepTimePicker.setDate(Date(), animated: false)
+//    }
+//    
+//    override func viewDidAppear(_ animated: Bool) {
+//        //AlarmでsleepTimerがnilじゃない場合
+//        if alarm.sleepTimer != nil{
+//            //再生されているタイマーを止める
+//            alarm.stopTimer()
+//        }
+//    }
+//    
+//    @IBAction func alarmBtnWasPressed(_ sender: UIButton) {
+//        
+//    }
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        // Do any additional setup after loading the view.
+//    }
+//    
+//    @IBAction func alarmBtnWasPressed(_ sender: UIButton) {
+//        //AlarmにあるselectedWakeUpTimeにユーザーの入力した日付を代入
+//        alarm.selectedWakeUpTime = sleepTimePicker.date
+//        //AlarmのrunTimerを呼ぶ
+//        alarm.runTimer()
+//        //SleepingViewControllerへの画面移動
+//        performSegue(withIdentifier: "setToSleeping", sender: nil)
+//    }
+//    
+//}
