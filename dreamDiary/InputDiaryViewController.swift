@@ -6,8 +6,7 @@ class InputDiaryViewController: UIViewController {
     @IBOutlet var bodyTextView: UITextView!
     @IBOutlet var datePicker: UIDatePicker!
     var dreamList: Results<DreamsModel>!
-    // primary keyの作成
-    
+    // primary keyの作成    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Realmのインスタンスを取得
