@@ -18,6 +18,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     // Realm
     var dreamList: Results<DreamsModel>!
     var selectedDreamList: Results<DreamsModel>!
+    var identicalId: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,11 +48,11 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)
-    fileprivate lazy var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
-    }()
+//    fileprivate lazy var dateFormatter: DateFormatter = {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd"
+//        return formatter
+//    }()
     
     // 祝日判定を行い結果を返すメソッド(True:祝日)
     func judgeHoliday(_ date : Date) -> Bool {
@@ -67,7 +68,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     // date型 -> 年月日をIntで取得
-    func getDay(_ date:Date) -> (Int,Int,Int){
+    func getDay(_ date:Date) -> (Int,Int,Int) {
         let tmpCalendar = Calendar(identifier: .gregorian)
         let year = tmpCalendar.component(.year, from: date)
         let month = tmpCalendar.component(.month, from: date)
@@ -76,7 +77,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     //曜日判定(日曜日:1 〜 土曜日:7)
-    func getWeekIdx(_ date: Date) -> Int{
+    func getWeekIdx(_ date: Date) -> Int {
         let tmpCalendar = Calendar(identifier: .gregorian)
         return tmpCalendar.component(.weekday, from: date)
     }
@@ -111,17 +112,11 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         dreamTableView.reloadData()
     }
     
-    // Table設定
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selectedDreamList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // セルを取得する
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "dreamCell", for: indexPath)
-        cell.textLabel!.text = selectedDreamList[indexPath.row].title
-        return cell
+    // 日の始まりと終わりを取得
+    private func getBeginingAndEndOfDay(_ date:Date) -> (begining: Date , end: Date) {
+        let begining = Calendar(identifier: .gregorian).startOfDay(for: date)
+        let end = begining + 24*60*60
+        return (begining, end)
     }
     
     // 記述した日付にマーク
@@ -137,14 +132,26 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         return tableList.count
     }
     
-    // 日の始まりと終わりを取得
-    private func getBeginingAndEndOfDay(_ date:Date) -> (begining: Date , end: Date) {
-        let begining = Calendar(identifier: .gregorian).startOfDay(for: date)
-        let end = begining + 24*60*60
-        return (begining, end)
+    // Table設定
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return selectedDreamList.count
     }
     
-    @IBAction func passId() {
-        print("id")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // セルを取得する
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "dreamCell", for: indexPath)
+        cell.textLabel!.text = selectedDreamList[indexPath.row].title
+        return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetailSegue" {
+            if let indexPath = dreamTableView.indexPathForSelectedRow {
+                guard let destination = segue.destination as? DetailDiaryViewController else {
+                    fatalError("Failed to prepare DetailDiaryViewController.")
+                }
+                destination.dailyDream = selectedDreamList[indexPath.row]
+            }
+        }
     }
 }

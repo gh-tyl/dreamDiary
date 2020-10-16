@@ -6,6 +6,7 @@ class InputDiaryViewController: UIViewController {
     @IBOutlet var bodyTextView: UITextView!
     @IBOutlet var datePicker: UIDatePicker!
     var dreamList: Results<DreamsModel>!
+    // primary keyの作成
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class InputDiaryViewController: UIViewController {
         dailyDream.body = self.bodyTextView.text
         // Realmのdbを取得
         let realm_after = try! Realm()
+        print("dailyDream", dailyDream)
         // 書き込み
         try! realm_after.write {
             realm_after.add(dailyDream)

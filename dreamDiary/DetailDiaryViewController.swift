@@ -7,17 +7,18 @@ class DetailDiaryViewController: UIViewController {
     // declare realm
     let realm = try! Realm()
     var dreamList: Results<DreamsModel>!
+    var dailyDream = DreamsModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Realmからデータ取得
         do {
-            let realm = try! Realm()
             dreamList = realm.objects(DreamsModel.self)
         }
-        titleLabel.reloadInputViews()
-        bodyLabel.reloadInputViews()
+        
+        titleLabel.text = dailyDream.title
+        bodyLabel.text = dailyDream.body
+        
     }
     
 }
