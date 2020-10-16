@@ -15,10 +15,8 @@ class DetailDiaryViewController: UIViewController {
         do {
             dreamList = realm.objects(DreamsModel.self)
         }
-        
         titleLabel.text = dailyDream.title
         bodyLabel.text = dailyDream.body
-        
     }
     
 }
