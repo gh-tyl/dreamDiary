@@ -198,7 +198,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="YN4-bb-Wg8"/>
                     <connections>
-                        <outlet property="sleepTimePicker" destination="kWA-6u-tPk" id="uxn-NG-MnF"/>
+                        <outlet property="sleepTimePicker" destination="kWA-6u-tPk" id="Gbf-G2-kEC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hlg-Tz-XKk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
