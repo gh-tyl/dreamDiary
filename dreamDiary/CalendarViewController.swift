@@ -18,7 +18,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     // Realm
     var dreamList: Results<DreamsModel>!
     var selectedDreamList: Results<DreamsModel>!
-    var identicalId: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
