@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0A598E95E8E907AAEBB53F3D /* Pods_dreamDiaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4E05170F966CBF7029E9EB /* Pods_dreamDiaryTests.framework */; };
-		3C07176925372E5F00BA1AA2 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07176825372E5F00BA1AA2 /* SleepViewController.swift */; };
 		3C07177525372ED200BA1AA2 /* CurrentTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07177425372ED200BA1AA2 /* CurrentTime.swift */; };
 		3C07177A25372F2600BA1AA2 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07177925372F2600BA1AA2 /* Alarm.swift */; };
 		3C0717832537389A00BA1AA2 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0717822537389A00BA1AA2 /* DateUtils.swift */; };
 		3C0E68B4252CB11A00A71E63 /* DreamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0E68B3252CB11A00A71E63 /* DreamModel.swift */; };
+		3C1B3CB8253B2C3E00FC67D2 /* SleepingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1B3CB7253B2C3E00FC67D2 /* SleepingViewController.swift */; };
 		3C660E42252A21A100C4E9CD /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C660E41252A21A100C4E9CD /* CalendarViewController.swift */; };
 		3C660E4A252A24A200C4E9CD /* InputDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C660E49252A24A200C4E9CD /* InputDiaryViewController.swift */; };
 		3C660E52252A251600C4E9CD /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C660E51252A251600C4E9CD /* AlarmViewController.swift */; };
@@ -47,7 +47,6 @@
 		3C7A96792529C6E5008F0FD2 /* JetBrainsMonoNL-Medium-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C7A965B2529C6E5008F0FD2 /* JetBrainsMonoNL-Medium-Italic.ttf */; };
 		3C7A967A2529C6E5008F0FD2 /* JetBrainsMonoNL-SemiLight-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C7A965C2529C6E5008F0FD2 /* JetBrainsMonoNL-SemiLight-Italic.ttf */; };
 		3C7A967B2529C6E5008F0FD2 /* JetBrainsMonoNL-Light-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C7A965D2529C6E5008F0FD2 /* JetBrainsMonoNL-Light-Italic.ttf */; };
-		3C9B16BA253A292500404DC2 /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9B16B9253A292500404DC2 /* EditingViewController.swift */; };
 		3CCCB05C25283F1A00EA0CE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCB05B25283F1A00EA0CE5 /* AppDelegate.swift */; };
 		3CCCB05E25283F1A00EA0CE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCB05D25283F1A00EA0CE5 /* SceneDelegate.swift */; };
 		3CCCB06025283F1A00EA0CE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCB05F25283F1A00EA0CE5 /* ViewController.swift */; };
@@ -81,11 +80,11 @@
 
 /* Begin PBXFileReference section */
 		27E77FE8988B55DA5561AEAD /* Pods-dreamDiaryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dreamDiaryTests.release.xcconfig"; path = "Target Support Files/Pods-dreamDiaryTests/Pods-dreamDiaryTests.release.xcconfig"; sourceTree = "<group>"; };
-		3C07176825372E5F00BA1AA2 /* SleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
 		3C07177425372ED200BA1AA2 /* CurrentTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTime.swift; sourceTree = "<group>"; };
 		3C07177925372F2600BA1AA2 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		3C0717822537389A00BA1AA2 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		3C0E68B3252CB11A00A71E63 /* DreamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamModel.swift; sourceTree = "<group>"; };
+		3C1B3CB7253B2C3E00FC67D2 /* SleepingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepingViewController.swift; sourceTree = "<group>"; };
 		3C660E41252A21A100C4E9CD /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		3C660E49252A24A200C4E9CD /* InputDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDiaryViewController.swift; sourceTree = "<group>"; };
 		3C660E51252A251600C4E9CD /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
@@ -120,7 +119,6 @@
 		3C7A965B2529C6E5008F0FD2 /* JetBrainsMonoNL-Medium-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMonoNL-Medium-Italic.ttf"; sourceTree = "<group>"; };
 		3C7A965C2529C6E5008F0FD2 /* JetBrainsMonoNL-SemiLight-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMonoNL-SemiLight-Italic.ttf"; sourceTree = "<group>"; };
 		3C7A965D2529C6E5008F0FD2 /* JetBrainsMonoNL-Light-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMonoNL-Light-Italic.ttf"; sourceTree = "<group>"; };
-		3C9B16B9253A292500404DC2 /* EditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingViewController.swift; sourceTree = "<group>"; };
 		3CCCB05825283F1A00EA0CE5 /* dreamDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dreamDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CCCB05B25283F1A00EA0CE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CCCB05D25283F1A00EA0CE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -245,10 +243,9 @@
 				3C660E41252A21A100C4E9CD /* CalendarViewController.swift */,
 				3C660E49252A24A200C4E9CD /* InputDiaryViewController.swift */,
 				3C660E5C252A3D5100C4E9CD /* DetailDiaryViewController.swift */,
-				3C9B16B9253A292500404DC2 /* EditingViewController.swift */,
 				3C0717822537389A00BA1AA2 /* DateUtils.swift */,
 				3C660E51252A251600C4E9CD /* AlarmViewController.swift */,
-				3C07176825372E5F00BA1AA2 /* SleepViewController.swift */,
+				3C1B3CB7253B2C3E00FC67D2 /* SleepingViewController.swift */,
 				3C07177925372F2600BA1AA2 /* Alarm.swift */,
 				3C07177425372ED200BA1AA2 /* CurrentTime.swift */,
 				3CE348E2252F0B6800881C4E /* MoreViewController.swift */,
@@ -572,7 +569,6 @@
 			files = (
 				3C660E42252A21A100C4E9CD /* CalendarViewController.swift in Sources */,
 				3CCCB06025283F1A00EA0CE5 /* ViewController.swift in Sources */,
-				3C07176925372E5F00BA1AA2 /* SleepViewController.swift in Sources */,
 				3C660E52252A251600C4E9CD /* AlarmViewController.swift in Sources */,
 				3CCCB05C25283F1A00EA0CE5 /* AppDelegate.swift in Sources */,
 				3C660E4A252A24A200C4E9CD /* InputDiaryViewController.swift in Sources */,
@@ -582,8 +578,8 @@
 				3C660E5D252A3D5100C4E9CD /* DetailDiaryViewController.swift in Sources */,
 				3C0E68B4252CB11A00A71E63 /* DreamModel.swift in Sources */,
 				3C0717832537389A00BA1AA2 /* DateUtils.swift in Sources */,
+				3C1B3CB8253B2C3E00FC67D2 /* SleepingViewController.swift in Sources */,
 				3CCCB05E25283F1A00EA0CE5 /* SceneDelegate.swift in Sources */,
-				3C9B16BA253A292500404DC2 /* EditingViewController.swift in Sources */,
 				3CF929492528BB6B00B99A0F /* LogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
