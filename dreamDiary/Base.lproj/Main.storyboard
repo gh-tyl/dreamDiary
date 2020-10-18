@@ -333,80 +333,6 @@
             </objects>
             <point key="canvasLocation" x="4104.8000000000002" y="106.59670164917542"/>
         </scene>
-        <!--More View Controller-->
-        <scene sceneID="qeP-ad-HV8">
-            <objects>
-                <viewController id="SFG-zc-r8U" customClass="MoreViewController" customModule="dreamDiary" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8cO-hk-wBG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="7kr-0D-E9H"/>
-                        <color key="backgroundColor" red="0.0" green="0.001722710082" blue="0.40021555180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Rh7-Wg-7cJ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tuQ-8i-jtL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2500" y="1672"/>
-        </scene>
-        <!--Log-->
-        <scene sceneID="sGj-xK-42K">
-            <objects>
-                <navigationController id="dWg-zc-ewO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Log" image="plus.rectangle.on.rectangle" catalog="system" selectedImage="plus.rectangle.on.rectangle.fill" id="cnu-Jr-RB6"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mpJ-5I-4gV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="EOv-KE-xNm" kind="relationship" relationship="rootViewController" id="QfM-0I-qZG"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KqL-0R-HJI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1681" y="-708"/>
-        </scene>
-        <!--Log View Controller-->
-        <scene sceneID="Yxy-cK-9FR">
-            <objects>
-                <viewController id="EOv-KE-xNm" customClass="LogViewController" customModule="dreamDiary" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gOe-Es-kpV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tge-sc-t7q">
-                                <rect key="frame" x="16" y="316" width="41" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="JetBrainsMono-Variable" family="JetBrains Mono" pointSize="17"/>
-                                <state key="normal" title="Prev">
-                                    <color key="titleColor" red="0.88198309075342463" green="0.83704785853173125" blue="0.35231184570175056" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ET4-tJ-VON">
-                                <rect key="frame" x="318" y="316" width="41" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="JetBrainsMono-Variable" family="JetBrains Mono" pointSize="17"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" red="0.88198309080000004" green="0.83704785849999996" blue="0.35231184570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7u0-dh-TCE">
-                                <rect key="frame" x="125" y="314" width="125" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="JetBrainsMono-Variable" family="JetBrains Mono" pointSize="30"/>
-                                <color key="textColor" red="0.88198309080000004" green="0.83704785849999996" blue="0.35231184570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="wnL-qx-Eb6"/>
-                        <color key="backgroundColor" red="0.0" green="0.0017227100821099791" blue="0.40021555182191781" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Bpq-Gz-B65"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iIt-c1-GNX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2500" y="-708"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LG4-F6-yns">
             <objects>
@@ -417,32 +343,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="dWg-zc-ewO" kind="relationship" relationship="viewControllers" id="fzB-M6-FFD"/>
                         <segue destination="Vy3-4M-khN" kind="relationship" relationship="viewControllers" id="vYe-ws-gad"/>
                         <segue destination="iCW-h0-TIa" kind="relationship" relationship="viewControllers" id="nCw-c5-ibj"/>
-                        <segue destination="QqM-mO-VHh" kind="relationship" relationship="viewControllers" id="4ao-3Z-trq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w99-yG-zIc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="641" y="107"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="hZZ-Ku-VQn">
-            <objects>
-                <navigationController id="QqM-mO-VHh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="Lbv-Os-9lF"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dfg-pi-YyV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="SFG-zc-r8U" kind="relationship" relationship="rootViewController" id="099-d4-u7n"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OnK-zj-dOh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1681" y="1672"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="X6G-a4-km2">
@@ -467,8 +374,6 @@
     <resources>
         <image name="alarm.fill" catalog="system" width="124" height="128"/>
         <image name="calendar.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="plus.rectangle.on.rectangle" catalog="system" width="128" height="96"/>
-        <image name="plus.rectangle.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
