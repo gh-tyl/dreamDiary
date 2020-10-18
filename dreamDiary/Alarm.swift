@@ -9,7 +9,7 @@ class Alarm{
     
     //アラーム/タイマーを開始
     func runTimer(){
-        //calculateIntervalにユーザーが入力した日付を渡す、返り値をsecondsに代入
+        //calculateIntervalにユーザーが入力した日付を譲渡,返り値をsecondsに代入
         seconds = calculateInterval(userAwakeTime: selectedWakeUpTime!)
         
         if sleepTimer == nil{

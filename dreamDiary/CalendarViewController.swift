@@ -10,7 +10,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     var dateValue: String!
     dynamic var presentDate = Date()
     // displayDate4test
-    @IBOutlet weak var labelDate: UILabel!
+    //@IBOutlet weak var labelDate: UILabel!
     // declare realm
     let realm = try! Realm()
     // TableView
