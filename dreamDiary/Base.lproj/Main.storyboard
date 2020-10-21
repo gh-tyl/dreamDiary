@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ykn-uF-ZXN">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0S-OX-lCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2500" y="106.59670164917542"/>
+            <point key="canvasLocation" x="2516" y="107"/>
         </scene>
         <!--Alarm-->
         <scene sceneID="Hew-0m-EeC">
@@ -110,7 +110,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qp2-NL-SNx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1681" y="890"/>
+            <point key="canvasLocation" x="1681" y="888"/>
         </scene>
         <!--Input Diary View Controller-->
         <scene sceneID="UHU-QO-E8c">
@@ -181,7 +181,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="US9-8Y-TRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="0wN-MX-qvG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4104.8000000000002" y="-708.39580209895053"/>
+            <point key="canvasLocation" x="3326" y="107"/>
         </scene>
         <!--Alarm View Controller-->
         <scene sceneID="oRd-ix-uCV">
@@ -225,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hlg-Tz-XKk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2500" y="889.20539730134942"/>
+            <point key="canvasLocation" x="2516" y="887"/>
         </scene>
         <!--Sleeping View Controller-->
         <scene sceneID="D5f-LS-Nxn">
@@ -264,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmr-TX-EI8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3325.5999999999999" y="888.30584707646187"/>
+            <point key="canvasLocation" x="3326" y="887"/>
         </scene>
         <!--Detail Diary View Controller-->
         <scene sceneID="bkr-Zb-06U">
@@ -328,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSQ-OD-7gC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4104.8000000000002" y="106.59670164917542"/>
+            <point key="canvasLocation" x="4087" y="107"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LG4-F6-yns">
@@ -346,7 +346,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w99-yG-zIc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="641" y="107"/>
+            <point key="canvasLocation" x="878" y="107"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="X6G-a4-km2">
