@@ -134,14 +134,14 @@
                                 </connections>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="E3a-BR-MwS">
-                                <rect key="frame" x="16" y="150" width="343" height="150"/>
+                                <rect key="frame" x="16" y="150" width="343" height="100"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="7x6-jL-8pH"/>
+                                    <constraint firstAttribute="height" constant="100" id="7x6-jL-8pH"/>
                                 </constraints>
                             </datePicker>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cvq-2c-KLu">
-                                <rect key="frame" x="16" y="310" width="343" height="298"/>
+                                <rect key="frame" x="16" y="260" width="343" height="348"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="JetBrainsMono-Variable" family="JetBrains Mono" pointSize="17"/>
@@ -212,7 +212,6 @@
                                 </state>
                                 <connections>
                                     <action selector="alarmBtnWasPressed:" destination="3iJ-0A-Wax" eventType="touchUpInside" id="BBD-V4-pjW"/>
-                                    <segue destination="rvG-Vp-XXk" kind="show" identifier="setToSleeping" id="mRb-bL-AdO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -231,7 +230,7 @@
         <!--Sleeping View Controller-->
         <scene sceneID="D5f-LS-Nxn">
             <objects>
-                <viewController id="rvG-Vp-XXk" customClass="SleepingViewController" customModule="dreamDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rvG-Vp-XXk" customClass="SleepingViewController" customModule="dreamDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dhb-1q-7pN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

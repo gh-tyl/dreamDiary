@@ -20,7 +20,10 @@ class AlarmViewController: UIViewController {
         //AlarmのrunTimerを呼ぶ
         alarm.runTimer()
         //SleepingViewControllerへの画面移動
-        performSegue(withIdentifier: "setToSleeping", sender: nil)
+        //performSegue(withIdentifier: "setToSleeping", sender: nil)
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as! SleepingViewController
+        self.present(secondViewController, animated: true, completion: nil)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
