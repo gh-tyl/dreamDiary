@@ -181,7 +181,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="US9-8Y-TRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="0wN-MX-qvG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3326" y="107"/>
+            <point key="canvasLocation" x="3366" y="-574"/>
         </scene>
         <!--Alarm View Controller-->
         <scene sceneID="oRd-ix-uCV">
@@ -212,6 +212,7 @@
                                 </state>
                                 <connections>
                                     <action selector="alarmBtnWasPressed:" destination="3iJ-0A-Wax" eventType="touchUpInside" id="BBD-V4-pjW"/>
+                                    <segue destination="rvG-Vp-XXk" kind="show" identifier="setToSleeping" id="C2i-En-OAM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -328,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSQ-OD-7gC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4087" y="107"/>
+            <point key="canvasLocation" x="3366" y="107"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LG4-F6-yns">

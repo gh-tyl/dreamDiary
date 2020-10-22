@@ -14,17 +14,27 @@ class AlarmViewController: UIViewController {
         sleepTimePicker.setDate(Date(), animated: false)
     }
     
-    @IBAction func alarmBtnWasPressed(_ sender: UIButton) {
-        //AlarmにあるselectedWakeUpTimeにユーザーの入力した日付を代入
-        alarm.selectedWakeUpTime = sleepTimePicker.date
-        //AlarmのrunTimerを呼ぶ
-        alarm.runTimer()
-        //SleepingViewControllerへの画面移動
-        //performSegue(withIdentifier: "setToSleeping", sender: nil)
-        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as! SleepingViewController
-        self.present(secondViewController, animated: true, completion: nil)
-        
+    @IBAction func alarmBtnWasPressed(_ sendar: Any) {
+        self.performSegue(withIdentifier: "setToSleeping", sender: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "setToSleeping" {
+            alarm.selectedWakeUpTime = sleepTimePicker.date
+            alarm.runTimer()
+            
+        }
+    }
+    
+//    @IBAction func alarmBtnWasPressed(_ sender: UIButton) {
+//        //AlarmにあるselectedWakeUpTimeにユーザーの入力した日付を代入
+//        alarm.selectedWakeUpTime = sleepTimePicker.date
+//        //AlarmのrunTimerを呼ぶ
+//        alarm.runTimer()
+//        //SleepingViewControllerへの画面移動
+//        performSegue(withIdentifier: "setToSleeping", sender: nil)
+//
+//    }
     
     override func viewDidAppear(_ animated: Bool) {
         //AlarmでsleepTimerがnilじゃない場合
