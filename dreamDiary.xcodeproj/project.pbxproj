@@ -210,6 +210,52 @@
 			path = font;
 			sourceTree = "<group>";
 		};
+		3C7E64D42541D052001B7BF4 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				3CF929482528BB6B00B99A0F /* LogViewController.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		3C7E64D52541D0B3001B7BF4 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				3C660E41252A21A100C4E9CD /* CalendarViewController.swift */,
+				3C660E49252A24A200C4E9CD /* InputDiaryViewController.swift */,
+				3C660E5C252A3D5100C4E9CD /* DetailDiaryViewController.swift */,
+				3C0717822537389A00BA1AA2 /* DateUtils.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		3C7E64D62541D0BF001B7BF4 /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				3C660E51252A251600C4E9CD /* AlarmViewController.swift */,
+				3C1B3CB7253B2C3E00FC67D2 /* SleepingViewController.swift */,
+				3C07177925372F2600BA1AA2 /* Alarm.swift */,
+				3C07177425372ED200BA1AA2 /* CurrentTime.swift */,
+			);
+			path = Alarm;
+			sourceTree = "<group>";
+		};
+		3C7E64D72541D0CA001B7BF4 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				3CE348E2252F0B6800881C4E /* MoreViewController.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		3C7E64D82541D0DE001B7BF4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3C0E68B3252CB11A00A71E63 /* DreamModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3CCCB04F25283F1A00EA0CE5 = {
 			isa = PBXGroup;
 			children = (
@@ -235,21 +281,15 @@
 		3CCCB05A25283F1A00EA0CE5 /* dreamDiary */ = {
 			isa = PBXGroup;
 			children = (
+				3C7E64D42541D052001B7BF4 /* Log */,
+				3C7E64D52541D0B3001B7BF4 /* Calendar */,
+				3C7E64D62541D0BF001B7BF4 /* Alarm */,
+				3C7E64D72541D0CA001B7BF4 /* More */,
+				3C7E64D82541D0DE001B7BF4 /* Model */,
 				3C7A963F2529C642008F0FD2 /* font */,
 				3CCCB05B25283F1A00EA0CE5 /* AppDelegate.swift */,
 				3CCCB05D25283F1A00EA0CE5 /* SceneDelegate.swift */,
 				3CCCB05F25283F1A00EA0CE5 /* ViewController.swift */,
-				3CF929482528BB6B00B99A0F /* LogViewController.swift */,
-				3C660E41252A21A100C4E9CD /* CalendarViewController.swift */,
-				3C660E49252A24A200C4E9CD /* InputDiaryViewController.swift */,
-				3C660E5C252A3D5100C4E9CD /* DetailDiaryViewController.swift */,
-				3C0717822537389A00BA1AA2 /* DateUtils.swift */,
-				3C660E51252A251600C4E9CD /* AlarmViewController.swift */,
-				3C1B3CB7253B2C3E00FC67D2 /* SleepingViewController.swift */,
-				3C07177925372F2600BA1AA2 /* Alarm.swift */,
-				3C07177425372ED200BA1AA2 /* CurrentTime.swift */,
-				3CE348E2252F0B6800881C4E /* MoreViewController.swift */,
-				3C0E68B3252CB11A00A71E63 /* DreamModel.swift */,
 				3CCCB06125283F1A00EA0CE5 /* Main.storyboard */,
 				3CCCB06425283F1C00EA0CE5 /* Assets.xcassets */,
 				3CCCB06625283F1C00EA0CE5 /* LaunchScreen.storyboard */,
