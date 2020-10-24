@@ -190,30 +190,79 @@
                     <view key="view" contentMode="scaleToFill" id="ezM-4G-v7R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5x0-Gx-mOt">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Qhc-AM-hDf"/>
                         <color key="backgroundColor" red="0.0" green="0.001722710082" blue="0.40021555180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="YN4-bb-Wg8"/>
+                    <navigationItem key="navigationItem" id="YN4-bb-Wg8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Mzc-Ry-amr">
+                            <connections>
+                                <segue destination="WbI-bD-ekt" kind="presentation" id="GtZ-8j-a6q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hlg-Tz-XKk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2516" y="887"/>
+            <point key="canvasLocation" x="2516" y="886.50674662668678"/>
         </scene>
-        <!--Sleeping View Controller-->
-        <scene sceneID="D5f-LS-Nxn">
+        <!--Add Alarm-->
+        <scene sceneID="TmW-RF-hwb">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rvG-Vp-XXk" customClass="SleepingViewController" customModule="dreamDiary" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dhb-1q-7pN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <tableViewController id="Pop-Mj-f3q" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3BR-lo-xIY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="E8J-JC-2hW"/>
-                        <color key="backgroundColor" red="0.0" green="0.001722710082" blue="0.40021555180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Zmo-kO-bku"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cmr-TX-EI8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <datePicker key="tableHeaderView" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="O32-9J-xKw">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        </datePicker>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hpa-uT-ocA">
+                                <rect key="frame" x="0.0" y="286" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hpa-uT-ocA" id="Dyf-4g-Bhw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Pop-Mj-f3q" id="tKh-b6-sqi"/>
+                            <outlet property="delegate" destination="Pop-Mj-f3q" id="edf-JQ-b5t"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Alarm" id="3lE-Lr-M99">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UGx-Gx-vag"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="h0l-zT-0mq"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nbf-5x-zil" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3326" y="887"/>
+            <point key="canvasLocation" x="4284" y="886.50674662668678"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="v02-vH-Yni">
+            <objects>
+                <navigationController id="WbI-bD-ekt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ASa-Yc-Hn9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Pop-Mj-f3q" kind="relationship" relationship="rootViewController" id="90s-xU-gGt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zEh-vA-NuO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3366" y="887"/>
         </scene>
         <!--Detail Diary View Controller-->
         <scene sceneID="bkr-Zb-06U">
@@ -224,7 +273,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IGf-TF-Z48">
-                                <rect key="frame" x="16" y="134" width="343" height="434"/>
+                                <rect key="frame" x="16" y="134" width="343" height="437"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="JetBrainsMono-Variable" family="JetBrains Mono" pointSize="17"/>
@@ -237,7 +286,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoB-BB-mGL">
-                                <rect key="frame" x="251" y="578" width="108" height="50"/>
+                                <rect key="frame" x="273" y="581" width="86" height="47"/>
                                 <fontDescription key="fontDescription" name="JetBrainsMono-Italic" family="JetBrains Mono" pointSize="30"/>
                                 <state key="normal" title="Delete">
                                     <color key="titleColor" red="0.88" green="0.80666666669999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
