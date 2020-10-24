@@ -1,8 +1,8 @@
 import UIKit
 
-class AlarmViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AlarmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    static let shared = AlarmViewController()
+    static let shared = AlarmVC()
     var appDelegate = UIApplication.shared
     
     @IBOutlet weak var tableView: UITableView!
