@@ -56,6 +56,7 @@
 		3C983FA22543F586001E4D6B /* AlarmDeleteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C983FA12543F586001E4D6B /* AlarmDeleteCell.swift */; };
 		3C983FA72543F67F001E4D6B /* AlarmRepeatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C983FA62543F67F001E4D6B /* AlarmRepeatVC.swift */; };
 		3C983FAC2543F69A001E4D6B /* AlarmAddLabelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C983FAB2543F69A001E4D6B /* AlarmAddLabelVC.swift */; };
+		3CA46CCC25467BF800484A27 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA46CCB25467BF800484A27 /* Alarm.swift */; };
 		3CCCB05C25283F1A00EA0CE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCB05B25283F1A00EA0CE5 /* AppDelegate.swift */; };
 		3CCCB05E25283F1A00EA0CE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCB05D25283F1A00EA0CE5 /* SceneDelegate.swift */; };
 		3CCCB06325283F1A00EA0CE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCB06125283F1A00EA0CE5 /* Main.storyboard */; };
@@ -136,6 +137,7 @@
 		3C983FA12543F586001E4D6B /* AlarmDeleteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDeleteCell.swift; sourceTree = "<group>"; };
 		3C983FA62543F67F001E4D6B /* AlarmRepeatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmRepeatVC.swift; sourceTree = "<group>"; };
 		3C983FAB2543F69A001E4D6B /* AlarmAddLabelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmAddLabelVC.swift; sourceTree = "<group>"; };
+		3CA46CCB25467BF800484A27 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		3CCCB05825283F1A00EA0CE5 /* dreamDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dreamDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CCCB05B25283F1A00EA0CE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CCCB05D25283F1A00EA0CE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		3C7E64D62541D0BF001B7BF4 /* Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				3CA46CCB25467BF800484A27 /* Alarm.swift */,
 				3C983F6D2543D3A9001E4D6B /* AlarmVC.swift */,
 				3C983F682543D35E001E4D6B /* AlarmTimeCell.swift */,
 				3C983F752543D461001E4D6B /* AlarmTimeCell.xib */,
@@ -647,6 +650,7 @@
 				3C983FA22543F586001E4D6B /* AlarmDeleteCell.swift in Sources */,
 				3C0E68B4252CB11A00A71E63 /* DreamModel.swift in Sources */,
 				3C983F902543F407001E4D6B /* AlarmSnoozeCell.swift in Sources */,
+				3CA46CCC25467BF800484A27 /* Alarm.swift in Sources */,
 				3C983FAC2543F69A001E4D6B /* AlarmAddLabelVC.swift in Sources */,
 				3C0717832537389A00BA1AA2 /* DateUtils.swift in Sources */,
 				3CCCB05E25283F1A00EA0CE5 /* SceneDelegate.swift in Sources */,

@@ -1,17 +1,21 @@
 import UIKit
 import RealmSwift
+import AVFoundation
 
 class InputDiaryViewController: UIViewController {
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var bodyTextView: UITextView!
     @IBOutlet var datePicker: UIDatePicker!
     var dreamList: Results<DreamsModel>!
-    // primary keyの作成
+    // 音楽コントローラ AVAudioPlayerを定義
+    var player:AVAudioPlayer = AVAudioPlayer()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Realmのインスタンスを取得
         let realm = try! Realm()
         self.dreamList = realm.objects(DreamsModel.self)
+        //Audioの停止
+        player.stop()
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,6 +38,6 @@ class InputDiaryViewController: UIViewController {
         }
         // 画面遷移
         self.navigationController?.popViewController(animated: true)
-        
     }
+    
 }
