@@ -44,6 +44,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewWillAppear(animated)
         // 再読み込み
         dreamTableView.reloadData()
+        calendar.reloadData()
     }
     
     fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)

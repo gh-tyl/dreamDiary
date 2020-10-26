@@ -131,7 +131,6 @@ class AlarmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-
 extension AlarmVC:AlarmAddDelegate{
     func AlarmAddVC(alarmAdd: AlarmAddVC, alarmTime: AlarmTimeArray) {
         if tableView.isEditing {
