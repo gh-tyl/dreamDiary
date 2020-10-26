@@ -39,7 +39,7 @@ class AlarmRepeatVC: UIViewController ,UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "weekCell", for: indexPath)
-        cell.textLabel!.text = "Every"+week[indexPath.row]
+        cell.textLabel!.text = "Every "+week[indexPath.row]
         cell.selectionStyle = .none
         for i in selectDay {
              if week[indexPath.row] == i {
