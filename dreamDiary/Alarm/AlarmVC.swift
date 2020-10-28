@@ -2,8 +2,6 @@ import UIKit
 import AVFoundation
 
 class AlarmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    // インスタンスの作成
-    let alarm = Alarm()
     static let shared = AlarmVC()
     var appDelegate = UIApplication.shared
     
@@ -24,10 +22,6 @@ class AlarmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func methodOfReceivedNotification(notification: Notification) {
-        print("methodOfReceivedNotification")
-        alarm.soundAudio()
-//        let soundIdRing:SystemSoundID = 1005
-//        AudioServicesPlaySystemSound(soundIdRing)
         timeLoad()
         DispatchQueue.main.async {
             self.tableView.reloadData()

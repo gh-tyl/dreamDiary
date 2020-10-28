@@ -8,7 +8,7 @@ class Alarm{
     var seconds = 0
     
     //サウンド再生
-    func soundAudio(){        
+    func soundAudio(){
         //音源のパス
         //let soundFilePath = Bundle.main.path(forResource: "alarm", ofType: "caf")!
 //        let soundFilePath = Bundle.main.path(forResource: "alarm", ofType: "caf")!
