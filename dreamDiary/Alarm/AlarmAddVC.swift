@@ -17,7 +17,8 @@ class AlarmAddVC: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //datePicker.date = alarmTime.date
+        datePicker.setValue(UIColor.yellow, forKey: "textColor")
+//        datePicker.backgroundColor = .white
         datePicker.date = alarmTime.date
         registerCell(cellName: "AlarmSnoozeCell")
         registerCell(cellName: "AlarmAddCell")

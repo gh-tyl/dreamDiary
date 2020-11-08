@@ -195,7 +195,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="US9-8Y-TRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="0wN-MX-qvG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3366" y="-574"/>
+            <point key="canvasLocation" x="3365.5999999999999" y="-574.36281859070471"/>
         </scene>
         <!--Detail Diary View Controller-->
         <scene sceneID="bkr-Zb-06U">
@@ -560,7 +560,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alarm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="68D-Le-nMS">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alarm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="68D-Le-nMS">
                                 <rect key="frame" x="16" y="180" width="343" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -576,6 +576,7 @@
                         <constraints>
                             <constraint firstItem="jhJ-da-zji" firstAttribute="trailing" secondItem="68D-Le-nMS" secondAttribute="trailing" constant="16" id="FQI-dV-ukU"/>
                             <constraint firstItem="68D-Le-nMS" firstAttribute="leading" secondItem="jhJ-da-zji" secondAttribute="leading" constant="16" id="jfD-uO-uFv"/>
+                            <constraint firstItem="68D-Le-nMS" firstAttribute="top" secondItem="jhJ-da-zji" secondAttribute="top" constant="124" id="xf2-y1-028"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Label" id="K48-hi-Bxk"/>

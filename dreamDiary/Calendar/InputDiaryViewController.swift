@@ -11,6 +11,9 @@ class InputDiaryViewController: UIViewController {
     var player:AVAudioPlayer = AVAudioPlayer()
     override func viewDidLoad() {
         super.viewDidLoad()
+        datePicker.setValue(UIColor.yellow, forKey: "textColor")
+        datePicker.setValue(false, forKey: "highlightsToday")
+//        datePicker.backgroundColor = .white
         // Realmのインスタンスを取得
         let realm = try! Realm()
         self.dreamList = realm.objects(DreamsModel.self)
