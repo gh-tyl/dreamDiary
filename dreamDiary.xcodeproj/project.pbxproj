@@ -300,6 +300,7 @@
 		3CA75A472547EB29009B6CC8 /* Material */ = {
 			isa = PBXGroup;
 			children = (
+				3CA75A492547EB3A009B6CC8 /* bell.mp3 */,
 				3CA75A482547EB3A009B6CC8 /* tickle.mp3 */,
 			);
 			path = Material;
@@ -333,7 +334,6 @@
 				3CA75A472547EB29009B6CC8 /* Material */,
 				3CCCB05B25283F1A00EA0CE5 /* AppDelegate.swift */,
 				3CCCB05D25283F1A00EA0CE5 /* SceneDelegate.swift */,
-				3CA75A492547EB3A009B6CC8 /* bell.mp3 */,
 				3C7E64D42541D052001B7BF4 /* Log */,
 				3C7E64D52541D0B3001B7BF4 /* Calendar */,
 				3C7E64D62541D0BF001B7BF4 /* Alarm */,
